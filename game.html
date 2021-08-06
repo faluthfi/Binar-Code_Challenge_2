@@ -1,19 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Game</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" type="text/css">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400;1,800&display=swap"
-            type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" type="text/css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400;1,800&display=swap"
+        type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/game.css">
+</head>
+
 <body>
-    
+    <div class="item topnav" style="display: flex;">
+        <div class="item">
+            <a href="./index.html">
+                <h1>
+                    &lt;</h1> </a> </div> <div class="item">
+                        <img src="./assets/logo 1.png" alt="test">
+        </div>
+        <div class="item">
+            <h2>rock paper scissors</h2>
+        </div>
+    </div>
+    <div class="item content">
+        <div class="item suit">
+            <div class="item" id="player">
+                
+                    <h2>player 1</h2>
+                
+                <div class="item hover">
+                    <img src="./assets/batu.png" alt="" id="playerRock" class="item gambar" onclick="suit('Rock')"> 
+                </div>
+                <div class="item hover">
+                    <img src="./assets/kertas.png" alt="" id="playerPaper" class="item gambar" onclick="suit('Paper')">
+                </div>
+                <div class="item hover">
+                    <img src="./assets/gunting.png" alt="" id="playerScissor" class="item gambar" onclick="suit('Scissor')">
+                </div>
+            </div>
+            <div class="item" id="mid">
+                <div class="item midbar">
+                    <div class="div item" id="result-container">
+                        <h1 id="result-text">VS</h1>
+                    </div>
+                </div>
+                <div class="item" id="refresh">
+                    <div class="item">
+                            <img src="./assets/refresh.png" alt="" onclick="javascript:location.reload()">
+                    </div>
+                </div>
+            </div>
+            <div class="item" id="com">
+                    <h2>COM</h2>
+                <div>
+                    <img src="./assets/batu.png" alt="" id="comRock" class="gambar">
+                </div>
+                <div>
+                    <img src="./assets/kertas.png" alt="" id="comPaper" class="gambar">
+                </div>
+                <div>
+                    <img src="./assets/gunting.png" alt="" id="comScissor" class="gambar">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./script/script.js"></script>
 </body>
+
 </html>

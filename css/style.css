@@ -80,7 +80,7 @@ body {
 
 /*Page One*/
 #page-one {
-    background-image: url(./assets/bg1.jpg);
+    background-image: url(../assets/bg1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -144,7 +144,7 @@ body {
 }
 
 .pg1-midctn button {
-    padding: 0.5em 3em;
+    padding: 1em 6em;
     font-weight: bold;
     margin-top: 3%;
 }
@@ -159,7 +159,7 @@ body {
 
 /*PAGE TWO*/
 #page-two {
-    background-image: url(./assets/bg2.jpg);
+    background-image: url(../assets/bg2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -199,7 +199,7 @@ body {
 
 /*PAGE THREE*/
 #page-three {
-    background-image: url(./assets/bg3.jpg);
+    background-image: url(../assets/bg3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -256,7 +256,7 @@ body {
 
 /*PAGE FOUR*/
 #page-four {
-    background-image: url(./assets/bg4.png);
+    background-image: url(../assets/bg4.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -301,7 +301,7 @@ color: #ffb548;
     grid-template-columns: 50% 50%;
 }
 .p5-left{
-    background-image: url(./assets/bg5-2.jpg); 
+    background-image: url(../assets/bg5-2.jpg); 
     color:white;
     display: flex;
     flex-direction: column;
@@ -542,7 +542,7 @@ color: #ffb548;
         visibility: hidden;
     }
     .p6-left{
-        background-image: url(./assets/pg6-content.png);
+        background-image: url(../assets/pg6-content.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
