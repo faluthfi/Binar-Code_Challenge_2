@@ -16,46 +16,46 @@
 </head>
 
 <body>
-    <div class="item topnav" style="display: flex;">
-        <div class="item">
+    <div class="topnav" style="display: flex;">
+        <div>
             <a href="./index.html">
                 <h1>
-                    &lt;</h1> </a> </div> <div class="item">
+                    &lt;</h1> </a> </div> <div>
                         <img src="./assets/logo 1.png" alt="test">
         </div>
-        <div class="item">
+        <div>
             <h2>rock paper scissors</h2>
         </div>
     </div>
-    <div class="item content">
-        <div class="item suit">
-            <div class="item" id="player">
+    <div class=" content">
+        <div class=" suit">
+            <div  id="player">
                 
                     <h2>player 1</h2>
                 
-                <div class="item hover">
-                    <img src="./assets/batu.png" alt="" id="playerRock" class="item gambar" onclick="suit('Rock')"> 
+                <div class=" hover">
+                    <img src="./assets/batu.png" alt="" id="playerRock" class="gambar" onclick="rock.runAll()"> 
                 </div>
-                <div class="item hover">
-                    <img src="./assets/kertas.png" alt="" id="playerPaper" class="item gambar" onclick="suit('Paper')">
+                <div class=" hover">
+                    <img src="./assets/kertas.png" alt="" id="playerPaper" class="gambar" onclick="paper.runAll()">
                 </div>
-                <div class="item hover">
-                    <img src="./assets/gunting.png" alt="" id="playerScissor" class="item gambar" onclick="suit('Scissor')">
+                <div class=" hover">
+                    <img src="./assets/gunting.png" alt="" id="playerScissor" class="gambar" onclick="scissor.runAll()">
                 </div>
             </div>
-            <div class="item" id="mid">
-                <div class="item midbar">
-                    <div class="div item" id="result-container">
+            <div  id="mid">
+                <div class=" midbar">
+                    <div  id="result-container">
                         <h1 id="result-text">VS</h1>
                     </div>
                 </div>
-                <div class="item" id="refresh">
-                    <div class="item">
-                            <img src="./assets/refresh.png" alt="" onclick="javascript:location.reload()">
+                <div  id="refresh">
+                    <div  >
+                            <img src="./assets/refresh.png" alt="" onclick="reset()">
                     </div>
                 </div>
             </div>
-            <div class="item" id="com">
+            <div id="com">
                     <h2>COM</h2>
                 <div>
                     <img src="./assets/batu.png" alt="" id="comRock" class="gambar">

@@ -1,83 +1,116 @@
-const result=["Draw","Player 1<br>Win","COM<br>Win"]
-const midDisplay= document.getElementById('result-text')
-suit = (playerSuit) =>{
-    let comResult;
-    let numberResult;
-    let suitResult;
-    let playerChoice
-    let comChoice
-    function getElementPlayer(playerSuit){
-        if(playerSuit=="Rock"){
-            return playerChoice=document.getElementById('playerRock')
-        }else if(playerSuit=="Paper"){
-            return playerChoice=document.getElementById('playerPaper')
-        }
-            return playerChoice=document.getElementById('playerScissor')
+
+const result=["Draw","Player 1<br>Win","COM<br>Win","VS"]
+
+
+class suit{
+    constructor(playerSuit){
+    this.playerSuit =playerSuit;
+    this.comResult;
+    this.numberResult;
+    this.suitResult;
+    this.playerChoice;
+    this.comChoice;
     }
-    function rng(){
-        numberResult =Math.floor(Math.random() * 3);
-        if (numberResult==0) {
-            return comResult="Rock"
+    // Mengubah input ke variabel
+    getElementPlayer(){
+        if(this.playerSuit=="Rock"){
+            return this.playerChoice=document.getElementById('playerRock').parentElement
+        }else if(this.playerSuit=="Paper"){
+            return this.playerChoice=document.getElementById('playerPaper').parentElement
         }
-        if (numberResult==1) {
-            return comResult="Paper"
+            return this.playerChoice=document.getElementById('playerScissor').parentElement
+    }
+    // Acak Angka
+    rng(){
+        this.numberResult=Math.floor(Math.random() * 3);
+        if (this.numberResult==0) {
+            return this.comResult="Rock"
         }
-        if (numberResult==2) {
-            return comResult="Scissor"
+        if (this.numberResult==1) {
+            return this.comResult="Paper"
+        }
+        if (this.numberResult==2) {
+            return this.comResult="Scissor"
         }
     }
-    function getElementCom(comResult){
-        if(comResult=="Rock"){
-            return comChoice=document.getElementById('comRock')
-        }else if(comResult=="Paper"){
-            return comChoice=document.getElementById('comPaper')
+    // Mengubah Angka yang diacak ke R/P/S
+    getElementCom(){
+        if(this.comResult=="Rock"){
+            return this.comChoice=document.getElementById('comRock').parentElement
+        }else if(this.comResult=="Paper"){
+            return this.comChoice=document.getElementById('comPaper').parentElement
         }
-            return comChoice=document.getElementById('comScissor')
+            return this.comChoice=document.getElementById('comScissor').parentElement
     }
-    function suitCheck(playerSuit){
-        if (comResult==playerSuit) {
-            return suitResult=result[0];
+    //Mengecek hasil suit
+    suitCheck(){
+        if (this.comResult==this.playerSuit) {
+            return this.suitResult=result[0];
         }
-        if (comResult=="Scissor" && playerSuit =="Paper" || comResult=="Paper" && playerSuit=="Rock" || comResult=="Rock" && playerSuit=="Scissor"){
-            return suitResult=result[2];
+        if (this.comResult=="Scissor" && this.playerSuit =="Paper" || this.comResult=="Paper" && this.playerSuit=="Rock" || this.comResult=="Rock" && this.playerSuit=="Scissor"){
+            return this.suitResult=result[2];
         }
-        return suitResult=result[1]
+        return this.suitResult=result[1]
     }
-    function changeMidDisplay(suitResult){
-        document.getElementById("result-text").innerHTML=`${suitResult}`;
+    //DOM mengubah mid display
+    changeMidDisplay(){ 
+        document.getElementById("result-text").innerHTML=`${this.suitResult}`;
         document.getElementById("result-text").style.color='white';
         document.getElementById("result-text").style.fontSize='80px';
         document.getElementById("result-container").style.transform='rotate(-20deg)';
-        if(suitResult===result[0]){
+        if(this.suitResult===result[0]){
             return document.getElementById("result-container").style.backgroundColor="green";
         }   return document.getElementById("result-container").style.backgroundColor="#4c9653";
     }
-    function turnBackground(){
-        playerChoice.parentElement.style.backgroundColor='#c4c4c4';
-        comChoice.parentElement.style.backgroundColor='#c4c4c4';
+    //DOM mengubah background
+    turnBackground(){
+        this.playerChoice.classList.toggle('grey');
+        this.comChoice.classList.toggle('grey');
     }
-    function removeOnClick(){
+    //DOM menghapus on click event
+    removeOnClick(){
         document.getElementById('playerScissor').removeAttribute("onclick")
         document.getElementById('playerRock').removeAttribute("onclick")
         document.getElementById('playerPaper').removeAttribute("onclick")
     }
-    function removeHover(){
-        document.getElementById('playerScissor').parentElement.classList.remove("hover")
-        document.getElementById('playerRock').parentElement.classList.remove("hover")
-        document.getElementById('playerPaper').parentElement.classList.remove("hover")
+    //DOM menghapus event on hover
+    removeHover(){
+        document.getElementById('playerScissor').parentElement.classList.toggle("hover")
+        document.getElementById('playerRock').parentElement.classList.toggle("hover")
+        document.getElementById('playerPaper').parentElement.classList.toggle("hover")
     }
-    getElementPlayer(playerSuit)
-    rng()
-    getElementCom(comResult)
-    suitCheck(playerSuit)
-    changeMidDisplay(suitResult)
-    turnBackground()
-    removeOnClick()
-    removeHover()
-    console.log(`COM Choosed: ${comResult}`)
-    console.log(`Player Choosed : ${playerSuit}`)
-    console.log(suitResult)
+    //console log hasil
+    displayLog(){
+        console.log(`Random number: ${this.numberResult}`)
+        console.log(`COM Choosed: ${this.comResult}`)
+        console.log(`Player Choosed : ${this.playerSuit}`)
+        if(this.suitResult==result[0]){
+            console.log("Draw")
+        }else if(this.suitResult==result[1]){
+            console.log("Player 1 Win")
+        }else{
+            console.log("COM Win")
+        }
+    }
+    //execute semua fungsi diatas
+    runAll(){
+    this.getElementPlayer()
+    this.rng()
+    this.getElementCom()
+    this.suitCheck()
+    this.changeMidDisplay()
+    this.turnBackground()
+    this.removeOnClick()
+    this.removeHover()
+    this.displayLog()
+    }
 }
-// suit("Rock")
-// suit("Paper")
-// suit("Scissor")
+
+reset=()=>{
+    window.history.go(0)
+}
+
+const rock=new suit("Rock")
+const paper=new suit("Paper")
+const scissor=new suit("Scissor")
+
